@@ -1,0 +1,14 @@
+.nav {
+    grid-area: n;
+}
+
+.item {
+    color: darkcyan;
+    border: 2px solid darkcyan;
+    font: normal bold large Vollkorn;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 10px;
+}
