@@ -1,3 +1,6 @@
+.myposts{
+    margin: 15px;
+}
 h1 {
     font-family: Vollkorn, serif;
     text-transform: uppercase;
@@ -7,4 +10,5 @@ h1 {
 
 textarea {
     resize: none;
+    margin-bottom: 15px;
 }

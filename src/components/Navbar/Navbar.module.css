@@ -3,12 +3,31 @@
 }
 
 .item {
-    color: darkcyan;
-    border: 2px solid darkcyan;
-    font: normal bold large Vollkorn;
-    text-transform: uppercase;
     border-radius: 5px;
     margin-bottom: 25px;
     text-align: center;
-    padding: 10px;
+}
+.item a{
+    color: darkcyan;
+    display: block;
+    border-radius: 5px;
+    border: 2px solid darkcyan;
+    text-transform: uppercase;
+    font: normal bold large Vollkorn;
+    text-decoration: none;
+    height: 100%;
+    text-align: center;
+    padding: 10px
+}
+
+.item:hover{
+    background-color: darkcyan;
+}
+.item:hover a{
+    color: white;
+}
+
+.item a.activeLink{
+    background-color: darkcyan;
+    color: white;
 }

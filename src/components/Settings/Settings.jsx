@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './News.module.css';
+import s from './Settings.module.css';
 
-const News = (props) => {
+const Settings = (props) => {
     return (
         <div>
             Settings
@@ -9,4 +9,4 @@ const News = (props) => {
     )
 }
 
-export default News;
+export default Settings;

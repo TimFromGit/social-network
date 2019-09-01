@@ -7,7 +7,7 @@ const Post = (props) => {
             <img src="http://artofsiroria.com/wp-content/uploads/2019/03/siroria-avatar-06.jpg" alt=""/>
             {props.message}
             <div>
-                <span>Like</span>
+                <span>Likes: </span> {props.likesCount}
             </div>
         </div>
 
