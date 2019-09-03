@@ -11,7 +11,7 @@
     text-decoration: none;
     padding: 5px;
     background-color: white;
-    font: normal bold large Vollkorn;
+    font-family: Vollkorn sans-serif;
 
 }
 
@@ -19,5 +19,4 @@
     background-color: darkcyan;
     text-decoration: none;
     color: white;
-    border-: 5px;
 }

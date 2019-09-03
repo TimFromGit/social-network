@@ -3,10 +3,15 @@ import s from './Post.module.css'
 
 const Post = (props) => {
     return (
-        <div className={s.item}>
-            <img src="http://artofsiroria.com/wp-content/uploads/2019/03/siroria-avatar-06.jpg" alt=""/>
-            {props.message}
-            <div>
+        <div className={s.post}>
+            <div className={s.item}>
+                <img src={props.img} alt=""/>
+                <div className={s.message}>
+                    {props.message}
+                </div>
+
+            </div>
+            <div className={s.likesCount}>
                 <span>Likes: </span> {props.likesCount}
             </div>
         </div>

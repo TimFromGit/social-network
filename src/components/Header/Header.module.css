@@ -1,7 +1,7 @@
 .header {
     grid-area: h;
     display: grid;
-    grid-template-columns: 195px 1fr;
+    grid-template-columns: 2fr 10fr;
     grid-column-gap: 30px;
 }
 
@@ -13,7 +13,7 @@
     border-radius: 10px;
 }
 .logo img {
-    width: 100px;
+    width: 7em;
 }
 .title{
     display: inline-grid;

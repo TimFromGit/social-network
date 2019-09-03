@@ -6,7 +6,7 @@ const MyPosts = (props) => {
     let posts = props.posts;
 
     let postsElement = posts
-        .map(p => (<Post message={p.message} likesCount={p.likesCount} key={p.id}/>));
+        .map(p => (<Post message={p.message} likesCount={p.likesCount} key={p.id} img={p.img}/>));
 
     return (
         <div className={s.postsBlock}>
@@ -15,7 +15,6 @@ const MyPosts = (props) => {
                 <textarea name="" id="" placeholder="New post"></textarea>
                 <button>Add post</button>
             </div>
-            <hr/>
             <div className={s.posts}>
                 {postsElement}
             </div>
