@@ -2,34 +2,7 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
     grid-gap: 15px;
-}
-
-.dialogsItems {
-    text-align: center;
-    display: grid;
-    grid-gap: 10px;
-}
-
-.dialogsItems a {
-    color: darkcyan;
-    display: block;
-    border-radius: 5px;
-    border: 1px solid darkcyan;
-    text-decoration: none;
-    padding: 5px;
-    background-color: white;
-    font: normal bold large Vollkorn;
-
-}
-
-.dialogsItems a.active {
-    background-color: darkcyan;
-    text-decoration: none;
-    color: white;
-    border-: 5px;
-}
-
-.dialog {
+    padding: 10px;
 }
 
 .messages {
@@ -37,4 +10,11 @@
     border: 1px solid darkcyan;
     border-radius: 5px;
     background-color: white;
+    height: 100%;
 }
+.dialogsItems {
+    text-align: center;
+    display: grid;
+    grid-gap: 10px;
+}
+

@@ -1,16 +1,9 @@
-.dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-    grid-gap: 15px;
-}
-
-.dialogsItems {
-    text-align: center;
+.dialog {
     display: grid;
     grid-gap: 10px;
 }
 
-.dialogsItems a {
+.dialog a {
     color: darkcyan;
     display: block;
     border-radius: 5px;
@@ -22,19 +15,9 @@
 
 }
 
-.dialogsItems a.active {
+.dialog a.active {
     background-color: darkcyan;
     text-decoration: none;
     color: white;
     border-: 5px;
-}
-
-.dialog {
-}
-
-.messages {
-    padding: 10px;
-    border: 1px solid darkcyan;
-    border-radius: 5px;
-    background-color: white;
 }

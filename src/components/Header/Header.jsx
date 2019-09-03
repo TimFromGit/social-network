@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <header className={s.header}>
             <div className={s.logo}>
-                <img src="https://www.freepnglogos.com/uploads/white-jack-daniels-holiday-whiskey-logo-png-2.png"/>
+                <img src="https://www.freepnglogos.com/uploads/white-jack-daniels-holiday-whiskey-logo-png-2.png" alt="Здесь логотип"/>
             </div>
             <div className={s.title}>
                 welcome to Jacky, buddy!
