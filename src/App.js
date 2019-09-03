@@ -11,9 +11,6 @@ import Settings from "./components/Settings/Settings";
 
 
 const App = (props) => {
-    let posts = props.posts;
-    let dialogs = props.dialogs;
-    let messages = props.messages;
 
     return (
         <BrowserRouter>
@@ -22,8 +19,8 @@ const App = (props) => {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Route exact path='/' render={() => <Redirect to="/profile"/>}/>
-                    <Route path='/profile' render={() => <Profile posts={posts}/>}/>
-                    <Route path='/dialogs' render={() => <Dialogs messages={messages} dialogs={dialogs}/>}/>
+                    <Route path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>

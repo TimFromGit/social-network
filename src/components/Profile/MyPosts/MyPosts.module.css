@@ -9,7 +9,7 @@
 }
 .addPost {
     display: grid;
-    grid-template-rows: 4fr 1fr;
+    grid-template-rows: 3fr 1fr;
     grid-gap: 15px;
     margin-bottom: 20px;
     justify-items: end;
