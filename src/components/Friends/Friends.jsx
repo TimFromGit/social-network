@@ -1,12 +1,17 @@
 import React from 'react';
-import s from './News.module.css';
+import s from './Friends.module.css';
 
-const News = (props) => {
+const Friends = (props) => {
+    let friendsElement = props.state.friends.map((f) => (
+        <div className={s.friend} key={f.id}>
+            <img src={f.img} alt=""/>
+            <div>{f.name}</div>
+        </div>
+    ));
     return (
-        <div className={s.news}>
-            News
+        <div className={s.friends}>
+            {friendsElement}
         </div>
     )
 }
-
-export default News;
+export default Friends;

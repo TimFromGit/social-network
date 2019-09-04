@@ -8,6 +8,12 @@
     margin-bottom: 15px;
 }
 
+.item:last-child {
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
 .item a {
     color: darkcyan;
     display: block;
@@ -21,13 +27,13 @@
     padding: 10px
 }
 
-.item:hover a{
+.item:hover a {
     color: white;
     background-color: darkcyan;
     opacity: 0.7;
 }
 
-.item a.activeLink{
+.item a.activeLink {
     background-color: darkcyan;
     color: white;
 }

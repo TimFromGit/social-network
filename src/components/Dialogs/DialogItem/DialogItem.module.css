@@ -1,18 +1,35 @@
+.dialog img {
+    width: 50px;
+    border-radius: 30px;
+    margin: 2px;
+
+}
 .dialog {
     display: grid;
-    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr;
+    border-left: 1px solid darkcyan;
+    border-top: 1px solid darkcyan;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 55px;
 }
-
 .dialog a {
     color: darkcyan;
-    display: block;
-    border-radius: 5px;
-    border: 1px solid darkcyan;
-    text-decoration: none;
-    padding: 5px;
     background-color: white;
+    display: block;
+    text-decoration: none;
     font-family: Vollkorn sans-serif;
+}
 
+.dialog:last-child {
+    border-bottom: 1px solid darkcyan;
+    border-bottom-left-radius: 10px;
+}
+
+
+.dialog:first-child {
+    border-top-left-radius: 10px;
 }
 
 .dialog a.active {

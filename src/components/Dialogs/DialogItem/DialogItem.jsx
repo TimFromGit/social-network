@@ -6,6 +6,7 @@ const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;
     return (
         <div className={s.dialog}>
+            <img src={props.img} alt="ава"/>
             <NavLink to={path} activeClassName={s.active}>{props.name}</NavLink>
         </div>
     );
