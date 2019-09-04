@@ -24,7 +24,6 @@ const App = (props) => {
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
-                    {/* eslint-disable-next-line no-unused-expressions */}
                     <Route path='/friends' render={() => <Friends state={props.state.sidebar}/>}/>
                 </div>
             </div>

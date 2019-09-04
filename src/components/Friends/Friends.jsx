@@ -8,6 +8,9 @@ const Friends = (props) => {
             <div>{f.name}</div>
         </div>
     ));
+    if (props.countFriends) {
+        friendsElement = friendsElement.slice(0, 4);
+    }
     return (
         <div className={s.friends}>
             {friendsElement}

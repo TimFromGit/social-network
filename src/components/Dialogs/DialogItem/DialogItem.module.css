@@ -1,14 +1,12 @@
 .dialog img {
     width: 50px;
     border-radius: 30px;
-    margin: 2px;
-
+    margin-left: 3px;
 }
 .dialog {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    border-left: 1px solid darkcyan;
-    border-top: 1px solid darkcyan;
+    grid-template-columns: 1fr 2fr;
+    border: 1px solid darkcyan;
     align-items: center;
     justify-content: center;
     background-color: white;
@@ -17,14 +15,12 @@
 .dialog a {
     color: darkcyan;
     background-color: white;
-    display: block;
     text-decoration: none;
     font-family: Vollkorn sans-serif;
 }
 
 .dialog:last-child {
     border-bottom: 1px solid darkcyan;
-    border-bottom-left-radius: 10px;
 }
 
 

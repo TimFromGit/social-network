@@ -24,7 +24,7 @@ const ProfileInfo = () => {
                         <strong>Interests:</strong> books
                     </div>
                     <div>
-                        <strong>About me:</strong> asldjalsdkj adsjdaj alksjd
+                        <strong>About me:</strong> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi non velit non neque molestie aliquet. Aenean quis rutrum odio. Sed faucibus consequat metus, eget sagittis erat accumsan nec. Curabitur malesuada nisi quis eleifend fringilla. Integer at nisi sit amet nibh blandit bibendum. Integer pellentesque condimentum dui, vel ullamcorper nulla molestie at. Duis quis facilisis leo. Aliquam id ante risus. Sed sit amet enim nisi. Quisque scelerisque convallis quam, eu lacinia lacus congue vitae. Donec eu velit blandit, ornare nunc a, pellentesque quam. Praesent eros metus, congue id nibh vitae, lobortis volutpat ex. Vivamus non laoreet nisl. Nunc accumsan rhoncus ex sed ultrices.
                     </div>
 
                 </div>
