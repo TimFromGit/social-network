@@ -36,6 +36,9 @@
     padding: 10px;
     box-sizing: border-box;
 }
+.newMessage:focus {
+    outline: none;
+}
 .btn {
     grid-area: b;
     background-color: darkcyan;
@@ -48,4 +51,10 @@
     height: 3em;
     padding: 10px;
     margin-top: 10px;
+}
+.dialogs .btn:active{
+    opacity: 0.7;
+}
+.dialogs .btn:focus{
+    outline: none;
 }
