@@ -55,7 +55,8 @@ let state = {
                 likesCount: 2,
                 img: "https://picsum.photos/350"
             }
-        ]
+        ],
+        newPostText: ""
     },
     dialogsPage: {
         dialogs: [
@@ -77,6 +78,7 @@ let state = {
             {id: 7, message: "Yeahaaaaa"}
         ]
     },
+    newMessageText: "",
     sidebar: {
         friends: [
             {id: 1, name: "Vasya", img: "https://picsum.photos/50"},
@@ -97,23 +99,37 @@ let state = {
     }
 }
 
-// функция добавления поста в state
-export let addPost = (postMessage) => {
-    let newPost = {
-        id: 5,
-        message: postMessage,
-        likesCount: 0,
-        img: "https://picsum.photos/360"
-    };
-    state.profilePage.posts.push(newPost);
+// функция контроля изменения написания поста в state
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
     renderEntireTree(state);
 }
-export let addMessage = (postMessage) => {
+// функция добавления поста в state
+export let addPost = () => {
+    if (state.profilePage.newPostText) {
+        let newPost = {
+            id: 5,
+            message: state.profilePage.newPostText,
+            likesCount: 0,
+            img: "https://picsum.photos/360"
+        };
+        state.profilePage.posts.push(newPost);
+        state.profilePage.newPostText = '';
+        renderEntireTree(state);
+    }
+}
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
+    renderEntireTree(state);
+}
+export let addMessage = () => {
     let newMessage = {
         id: 8,
-        message: postMessage
+        message: state.dialogsPage.newMessageText
     };
     state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
     renderEntireTree(state);
 }
 
