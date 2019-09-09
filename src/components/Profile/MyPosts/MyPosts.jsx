@@ -5,7 +5,7 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
 
     let postsElement = props.posts.map(p => (
-        <Post message={p.message} likesCount={p.likesCount} key={p.id} img={p.img}/>));
+        <Post message={p.message} likesCount={p.likesCount} key={p.id} img={p.img}/>)).reverse();
 
     // СОЗДАНИЕ ПОСТА
     // создаем ссылку и привязываем к textarea

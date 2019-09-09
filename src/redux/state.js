@@ -1,5 +1,6 @@
-import {renderEntireTree} from "../render";
-
+let renderEntireTree = () => {
+    subscribe();
+}
 let state = {
     profilePage: {
         posts: [
@@ -98,17 +99,17 @@ let state = {
         ]
     }
 }
-
+window.state = state;
 // функция контроля изменения написания поста в state
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     renderEntireTree(state);
 }
 // функция добавления поста в state
-export let addPost = () => {
+export const addPost = () => {
     if (state.profilePage.newPostText) {
         let newPost = {
-            id: 5,
+            id: state.profilePage.posts.length + 1,
             message: state.profilePage.newPostText,
             likesCount: 0,
             img: "https://picsum.photos/360"
@@ -118,19 +119,24 @@ export let addPost = () => {
         renderEntireTree(state);
     }
 }
-
-export let updateNewMessageText = (newText) => {
+//обновление текстареа в диалогах
+export const updateNewMessageText = (newText) => {
     state.dialogsPage.newMessageText = newText;
     renderEntireTree(state);
 }
-export let addMessage = () => {
+//добавление сообщения в диалогах
+export const addMessage = () => {
     let newMessage = {
-        id: 8,
+        id: state.dialogsPage.messages.length + 1,
         message: state.dialogsPage.newMessageText
     };
     state.dialogsPage.messages.push(newMessage);
     state.dialogsPage.newMessageText = '';
     renderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    renderEntireTree = observer;
 }
 
 export default state;
