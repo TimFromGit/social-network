@@ -10,11 +10,16 @@ const MyPosts = (props) => {
     // СОЗДАНИЕ ПОСТА
     // создаем ссылку и привязываем к textarea
     //функция добавления поста
+
+    let newPostElement = React.createRef();
+
     let addPost = () => {
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
     }
-    let onPostChange = (event) => {
-        props.updateNewPostText(event.target.value);
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        let action = {type:"UPDATE-NEW-POST-TEXT", newText: text};
+        props.dispatch(action);
     }
 
 return (
@@ -23,7 +28,7 @@ return (
         <div className={s.addPost}>
                 <textarea
                     onChange={onPostChange}
-                    placeholder="Write a post right now, quicly!"
+                    ref={newPostElement}
                     value={props.newPostText}/>
             <button onClick={addPost}>Add post</button>
         </div>
