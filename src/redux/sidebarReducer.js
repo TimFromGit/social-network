@@ -1,4 +1,3 @@
-debugger;
 let initialState = {
     friends: [
         {id: 1, name: "Vasya", img: "https://picsum.photos/50"},

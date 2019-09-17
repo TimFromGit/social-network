@@ -7,12 +7,11 @@ import {Redirect, Route} from "react-router-dom";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
-import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import FriendsContainer from "./components/Friends/FriendsContainer";
 
 
 const App = (props) => {
-    debugger;
     return (
         <div className="app-wrapper">
             <Header/>
@@ -26,7 +25,7 @@ const App = (props) => {
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>
-                <Route path='/friends' render={() => <Friends state={props.store.getState().sidebar}/>}/>
+                <Route path='/friends' render={() => <FriendsContainer/>}/>
             </div>
         </div>
 

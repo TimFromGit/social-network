@@ -2,8 +2,7 @@ import React from 'react';
 import s from './Friends.module.css';
 
 const Friends = (props) => {
-    debugger;
-    let friendsElement = props.state.friends.map((f) => (
+    let friendsElement = props.friends.map((f) => (
         <div className={s.friend} key={f.id}>
             <img src={f.img} alt=""/>
             <div>{f.name}</div>
