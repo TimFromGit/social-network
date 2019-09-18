@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD_POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+
 let initialState = {
     posts: [
         {id: 1, message: "It's my life", likesCount: 12, img: "https://picsum.photos/200"},
@@ -57,7 +58,6 @@ let initialState = {
     ],
     newPostText: ""
 };
-
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
