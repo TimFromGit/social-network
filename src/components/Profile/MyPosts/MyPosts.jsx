@@ -13,7 +13,7 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
 
-    let onAddPost  = () => {
+    let onAddPost = () => {
         props.addPost();
     }
     let onPostChange = () => {
@@ -29,7 +29,7 @@ const MyPosts = (props) => {
                     onChange={onPostChange}
                     ref={newPostElement}
                     value={props.newPostText}/>
-                <button onClick={onAddPost }>Add post</button>
+                <button onClick={onAddPost}>Add post</button>
             </div>
             <div className={s.posts}>
                 {postsElement}
