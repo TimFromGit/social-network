@@ -37,12 +37,14 @@
     padding: 10px;
 }
 
-.addPost button:active{
+.addPost .btn:active{
     opacity: 0.7;
 
 }
-.addPost button:focus{
+.addPost .btn:focus,
+.addPost .btn:hover{
     outline: none;
+    opacity: 0.7;
 }
 
 .posts{

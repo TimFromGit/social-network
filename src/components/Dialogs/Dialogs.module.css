@@ -55,6 +55,8 @@
 .dialogs .btn:active{
     opacity: 0.7;
 }
-.dialogs .btn:focus{
+.dialogs .btn:focus,
+.dialogs .btn:hover{
     outline: none;
+    opacity: 0.7;
 }
