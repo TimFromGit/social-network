@@ -1,0 +1,24 @@
+.usersPhoto {
+    border-radius: 30px;
+    width: 100px;
+    height: 100px;
+}
+.selectedPage {
+    font-weight: bold;
+}
+.users {
+
+}
+.userFollow,.userInfo {
+    display: inline-block;
+    vertical-align: top;
+}
+.userFollow {
+    text-align: center;
+}
+.userInfo {
+ padding: 20px 10px;
+}
+.name {
+    font-weight: bold;
+}

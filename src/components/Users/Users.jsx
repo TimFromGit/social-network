@@ -1,5 +1,5 @@
 import React from 'react';
-import s from "./users.module.css";
+import s from "./Users.module.css";
 import userPhoto from '../../assets/images/user.png'
 
 
@@ -12,6 +12,7 @@ let Users = (props) => {
     }
 
     return <div>
+        {/*Пагинатор start*/}
         <div>
             {pages.map(p => {
                 return <span
@@ -23,13 +24,20 @@ let Users = (props) => {
                     </span>
             })}
         </div>
+        {/*Пагинатор end*/}
+
+        {/*Юзеры старт*/}
         {
-            props.users.map(u => <div key={u.id}>
-                    <span>
+            props.users.map(u =>
+                <div key={u.id} className={s.users}>
+                    <div className={s.userFollow}>
+                        {/*Юзеры - фото старт*/}
                         <div>
                             <img src={u.photos.small != null ? u.photos.small : userPhoto} className={s.usersPhoto}
                                  alt=''/>
                         </div>
+                        {/*Юзеры - фото конец*/}
+                        {/*Юзеры - кнопка фоллоу/анфоллоу старт*/}
                         <div>
                             {u.followed
                                 ? <button onClick={() => {
@@ -38,21 +46,18 @@ let Users = (props) => {
                                 : <button onClick={() => {
                                     props.follow(u.id)
                                 }}>Follow</button>}
-
                         </div>
-                    </span>
-                <span>
-                        <span>
-                            <div>{u.name}</div>
-                            <div>{u.status}</div>
-                        </span>
-                        <span>
-                            <div>{'u.location.country'}</div>
-                            <div>{'u.location.city'}</div>
-                        </span>
-                    </span>
-            </div>)
+                        {/*Юзеры - кнопка фоллоу/анфоллоу конец*/}
+                    </div>
+                    <div className={s.userInfo}>
+                        <div className={s.name}>{u.name}</div>
+                        <div>{u.status}</div>
+                        <div>{'u.location.country'}</div>
+                        <div>{'u.location.city'}</div>
+                    </div>
+                </div>)
         }
+        {/*Юзеры end*/}
     </div>
 }
 
