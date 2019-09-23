@@ -1,30 +1,53 @@
 import React from 'react';
 import s from './ProfileInfo.module.css'
+import Preloader from "../../common/Preloader/preloader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
+
     return (
         <div className={s.descr}>
             <div className={s.img}></div>
             <div className={s.descriptionBlock}>
-                <div className={s.profilePhoto}></div>
+                <img className={s.profilePhoto} src={props.profile.photos.large}/>
                 <div className={s.profileData}>
                     <div>
-                        <strong>Name:</strong> John
+                        <strong>Full Name:</strong> {props.profile.fullName}
                     </div>
                     <div>
-                        <strong>Surname:</strong> Doe
+                        <strong>Facebook:</strong> {props.profile.contacts.facebook}
+                    </div>
+                        {props.profile.contacts.website
+                            ? <div><strong>Website:</strong> {props.profile.contacts.website}</div>
+                            : null}
+                    <div>
+                        <strong>VK:</strong> {props.profile.contacts.vk}
                     </div>
                     <div>
-                        <strong>Ages:</strong> 23
+                        <strong>Twitter:</strong> {props.profile.contacts.twitter}
                     </div>
                     <div>
-                        <strong>Sex:</strong> man
+                        <strong>Instagram:</strong> {props.profile.contacts.instagram}
                     </div>
                     <div>
-                        <strong>Interests:</strong> books
+                        <strong>Youtube:</strong> {props.profile.contacts.youtube}
                     </div>
                     <div>
-                        <strong>About me:</strong> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi non velit non neque molestie aliquet. Aenean quis rutrum odio. Sed faucibus consequat metus, eget sagittis erat accumsan nec. Curabitur malesuada nisi quis eleifend fringilla. Integer at nisi sit amet nibh blandit bibendum. Integer pellentesque condimentum dui, vel ullamcorper nulla molestie at. Duis quis facilisis leo. Aliquam id ante risus. Sed sit amet enim nisi. Quisque scelerisque convallis quam, eu lacinia lacus congue vitae. Donec eu velit blandit, ornare nunc a, pellentesque quam. Praesent eros metus, congue id nibh vitae, lobortis volutpat ex. Vivamus non laoreet nisl. Nunc accumsan rhoncus ex sed ultrices.
+                        <strong>Github:</strong> {props.profile.contacts.github}
+                    </div>
+                    <div>
+                        <strong>Main Link:</strong> {props.profile.contacts.mainLink}
+                    </div>
+                    <div>
+                        <strong>Looking for a job:</strong> {props.profile.lookingForAJob}
+                    </div>
+                    <div>
+                        <strong>Looking for a job description:</strong> {props.profile.lookingForAJobDescription}
+                    </div>
+                    <div>
+                        <strong>About me:</strong> {props.profile.aboutMe}
                     </div>
 
                 </div>
