@@ -7,7 +7,7 @@
     font-weight: bold;
 }
 .users {
-
+ margin-top: 20px;
 }
 .userFollow,.userInfo {
     display: inline-block;
