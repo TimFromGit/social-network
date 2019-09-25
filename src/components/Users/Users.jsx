@@ -2,6 +2,7 @@ import React from 'react';
 import s from "./Users.module.css";
 import userPhoto from '../../assets/images/user.svg'
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 
 let Users = (props) => {
@@ -34,7 +35,7 @@ let Users = (props) => {
                     <div className={s.userFollow}>
                         {/*Юзеры - фото старт*/}
                         <div>
-                            <NavLink to={'/profile/'+u.id}>
+                            <NavLink to={'/profile/' + u.id}>
                                 <img src={u.photos.small != null ? u.photos.small : userPhoto} className={s.usersPhoto}
                                      alt=''/>
                             </NavLink>
@@ -45,10 +46,29 @@ let Users = (props) => {
                         <div>
                             {u.followed
                                 ? <button onClick={() => {
-                                    props.unfollow(u.id)
+                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                        withCredentials: true,
+                                        headers: {'API-KEY': '946b5ace-a3e3-4432-bdfd-9021d5788833'}
+                                    })
+                                        .then(response => {
+                                            if (response.data.resultCode === 0) {
+                                                props.unfollow(u.id);
+                                            }
+                                        });
+
                                 }}>Unollow</button>
                                 : <button onClick={() => {
-                                    props.follow(u.id)
+
+                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                        withCredentials: true,
+                                        headers: {'API-KEY': '946b5ace-a3e3-4432-bdfd-9021d5788833'}
+                                    })
+                                        .then(response => {
+                                            if (response.data.resultCode === 0) {
+                                                props.follow(u.id);
+                                            }
+                                        });
+
                                 }}>Follow</button>}
                         </div>
                         {/*Юзеры - кнопка фоллоу/анфоллоу конец*/}
