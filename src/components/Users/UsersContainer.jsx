@@ -7,7 +7,7 @@ import {
 import React from 'react';
 import Users from './Users';
 import Preloader from "../common/Preloader/preloader";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 //контейнерная компонента API урновня, отправляющая ajax запросы
 class UsersContainer extends React.Component {
@@ -49,8 +49,9 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default withAuthRedirect(connect(mapStateToProps, {
-    follow, unfollow,
-    setCurrentPage, toggleFollowingProgress,
-    getUsers
-})(UsersContainer));
+export default compose(
+    connect(mapStateToProps, {
+        follow, unfollow,
+        setCurrentPage, toggleFollowingProgress,
+        getUsers})
+)(UsersContainer)
