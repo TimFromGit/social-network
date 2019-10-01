@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
+import {Field, reduxForm} from "redux-form";
 
 const MyPosts = (props) => {
 
@@ -8,33 +9,36 @@ const MyPosts = (props) => {
         <Post message={p.message} likesCount={p.likesCount} key={p.id} img={p.img}/>)).reverse();
 
     // СОЗДАНИЕ ПОСТА
-    // создаем ссылку и привязываем к textarea
     //функция добавления поста
-
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
-    }
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText);
     }
 
     return (
         <div className={s.postsBlock}>
             <h2>My posts</h2>
-            <div className={s.addPost}>
-                <textarea
-                    onChange={onPostChange}
-                    ref={newPostElement}
-                    value={props.newPostText}/>
-                <button className={s.btn} onClick={onAddPost}>Add post</button>
-            </div>
+            {/*
+            Форма добавления поста
+            */}
+            <AddNewPostFormRedux onSubmit={onAddPost}/>
             <div className={s.posts}>
                 {postsElement}
             </div>
         </div>
     )
 }
+
+const AddNewPostForm = (props) => {
+    return (
+        <form className={s.addPost} onSubmit={props.handleSubmit}>
+            <Field component="textarea" name="newPostText" placeholder="Enter your message"/>
+            <div>
+                <button className={s.btn}>Add post</button>
+            </div>
+        </form>
+    )
+}
+
+const AddNewPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
+
 export default MyPosts;
