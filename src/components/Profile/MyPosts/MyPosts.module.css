@@ -15,12 +15,13 @@
     justify-items: end;
     margin-left: 15px;
 }
-.addPost textarea {
+.addPost div textarea {
     resize: none;
     border-radius: 5px;
     border-color: darkcyan;
     padding: 10px;
-    width: 100%;
+    width: 800px;
+    height: 150px;
 }
 .addPost textarea:focus {
     outline: none;
