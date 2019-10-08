@@ -4,8 +4,8 @@ import Preloader from "../../common/Preloader/preloader";
 import userPhoto from "../../../assets/images/user.svg";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({profile, status,updateStatus}) => {
+    if (!profile) {
         return <Preloader />
     }
 
@@ -13,56 +13,57 @@ const ProfileInfo = (props) => {
         <div className={s.descr}>
             <div className={s.img}></div>
             <div className={s.descriptionBlock}>
-                <img className={s.profilePhoto} alt ="" src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}/>
+                <img className={s.profilePhoto} alt ="" src={profile.photos.large != null ? profile.photos.large : userPhoto}/>
                 <div className={s.status}>
                     <span>Status: </span>
                     <ProfileStatusWithHooks
                         className={s.status}
-                        status={props.status}
-                        updateStatus={props.updateStatus}
+                        status={status}
+                        updateStatus={updateStatus}
                     />
                 </div>
                 <div className={s.profileData}>
                     <div>
-                        <strong>Full Name:</strong> {props.profile.fullName}
+                        <strong>Full Name:</strong> {profile.fullName}
                     </div>
                     <div>
-                        <strong>Facebook:</strong> {props.profile.contacts.facebook}
+                        <strong>Facebook:</strong> {profile.contacts.facebook}
                     </div>
-                        {props.profile.contacts.website
-                            ? <div><strong>Website:</strong> {props.profile.contacts.website}</div>
+                        {profile.contacts.website
+                            ? <div><strong>Website:</strong> {profile.contacts.website}</div>
                             : null}
                     <div>
-                        <strong>VK:</strong> {props.profile.contacts.vk}
+                        <strong>VK:</strong> {profile.contacts.vk}
                     </div>
                     <div>
-                        <strong>Twitter:</strong> {props.profile.contacts.twitter}
+                        <strong>Twitter:</strong> {profile.contacts.twitter}
                     </div>
                     <div>
-                        <strong>Instagram:</strong> {props.profile.contacts.instagram}
+                        <strong>Instagram:</strong> {profile.contacts.instagram}
                     </div>
                     <div>
-                        <strong>Youtube:</strong> {props.profile.contacts.youtube}
+                        <strong>Youtube:</strong> {profile.contacts.youtube}
                     </div>
                     <div>
-                        <strong>Github:</strong> {props.profile.contacts.github}
+                        <strong>Github:</strong> {profile.contacts.github}
                     </div>
                     <div>
-                        <strong>Main Link:</strong> {props.profile.contacts.mainLink}
+                        <strong>Main Link:</strong> {profile.contacts.mainLink}
                     </div>
                     <div>
-                        <strong>Looking for a job:</strong> {props.profile.lookingForAJob}
+                        <strong>Looking for a job:</strong> {profile.lookingForAJob}
                     </div>
                     <div>
-                        <strong>Looking for a job description:</strong> {props.profile.lookingForAJobDescription}
+                        <strong>Looking for a job description:</strong> {profile.lookingForAJobDescription}
                     </div>
                     <div>
-                        <strong>About me:</strong> {props.profile.aboutMe}
+                        <strong>About me:</strong> {profile.aboutMe}
                     </div>
                 </div>
             </div>
 
         </div>
     );
-}
+};
+
 export default ProfileInfo;
