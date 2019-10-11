@@ -1,0 +1,46 @@
+.postsBlock{
+    padding: 10px;
+}
+.postsBlock h2 {
+    font-family: Vollkorn, serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: darkcyan;
+}
+
+.addPost textarea {
+    resize: none;
+    border-radius: 5px;
+    border-color: darkcyan;
+    padding: 10px;
+    width: 97%;
+    height: 150px;
+}
+
+.addPost textarea:focus {
+    outline: none;
+}
+.addPost button {
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font: normal bold large Vollkorn;
+    text-transform: uppercase;
+    width: 15em;
+    height: 3em;
+    padding: 10px;
+}
+
+.addPost .btn:active{
+    opacity: 0.7;
+
+}
+.addPost .btn:focus,
+.addPost .btn:hover{
+    outline: none;
+    opacity: 0.7;
+}
+
+.posts{
+}

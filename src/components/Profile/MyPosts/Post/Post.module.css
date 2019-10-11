@@ -1,0 +1,35 @@
+.post {
+    font-family: Exo, serif;
+    color: darkcyan;
+    margin-top: 20px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    grid-gap: 20px;
+    justify-items: center;
+    margin: 10px;
+
+}
+
+.item .message {
+    border: 1px dotted darkcyan;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 4em;
+}
+
+.post img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+
+}
+
+.post .likesCount {
+    margin-top: 10px;
+
+    text-align: end;
+}

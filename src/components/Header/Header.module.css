@@ -1,0 +1,52 @@
+.header {
+    grid-area: h;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-column-gap: 30px;
+}
+
+.logo {
+    display: inline-grid;
+    align-items: center;
+    justify-items: center;
+    background-color: darkcyan;
+    border-radius: 10px;
+}
+
+.logo img {
+    width: 7em;
+}
+
+.welcomBar {
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    color: white;
+    font: normal bold x-large Vollkorn;
+    text-transform: uppercase;
+    background-color: darkcyan;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.title {
+    display: inline-grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.loginBlock {
+    display: inline-grid;
+    justify-items: center;
+    align-items: center;
+    font: normal normal x-large Vollkorn;
+    text-transform: none;
+
+}
+
+.loginBlock a {
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+}

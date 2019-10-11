@@ -1,0 +1,65 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 10fr 3fr;
+    grid-template-areas: 'di m' 'di nm' 'di b';
+    padding: 10px;
+    justify-items: end;
+}
+
+.messages {
+    grid-area: m;
+    display: block;
+    border: 1px solid darkcyan;
+    background-color: ghostwhite;
+    border-top-right-radius: 10px;
+    margin-left: -10px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.dialogsItems {
+    grid-area: di;
+    text-align: center;
+}
+
+.newMessage {
+    grid-area: nm;
+    display: block;
+    resize: none;
+    border-color: darkcyan;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.newMessage:focus {
+    outline: none;
+}
+
+.btn {
+    grid-area: b;
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font: normal bold large Vollkorn;
+    text-transform: uppercase;
+    width: 15em;
+    height: 3em;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.dialogs .btn:active {
+    opacity: 0.7;
+}
+
+.dialogs .btn:focus,
+.dialogs .btn:hover {
+    outline: none;
+    opacity: 0.7;
+}

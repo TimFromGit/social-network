@@ -1,0 +1,39 @@
+.nav {
+    grid-area: n;
+}
+
+.item {
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.item:last-child {
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.item a {
+    color: darkcyan;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid darkcyan;
+    text-transform: uppercase;
+    font: normal bold medium Vollkorn;
+    text-decoration: none;
+    height: 100%;
+    text-align: center;
+    padding: 10px
+}
+
+.item:hover a {
+    color: white;
+    background-color: darkcyan;
+    opacity: 0.7;
+}
+
+.item a.activeLink {
+    background-color: darkcyan;
+    color: white;
+}

@@ -1,0 +1,35 @@
+.dialog img {
+    width: 50px;
+    border-radius: 30px;
+    margin-left: 3px;
+}
+.dialog {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border: 1px solid darkcyan;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 55px;
+}
+.dialog a {
+    color: darkcyan;
+    background-color: white;
+    text-decoration: none;
+    font-family: Vollkorn sans-serif;
+}
+
+.dialog:last-child {
+    border-bottom: 1px solid darkcyan;
+}
+
+
+.dialog:first-child {
+    border-top-left-radius: 10px;
+}
+
+.dialog a.active {
+    background-color: darkcyan;
+    text-decoration: none;
+    color: white;
+}
