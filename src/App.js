@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {HashRouter, Route, withRouter} from "react-router-dom";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
@@ -59,10 +59,11 @@ const AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App);
 
 const MainApp = (props) => {
-    return <BrowserRouter>
+    //Настройка окружения.Базовое имя должно быть относительно social-network, не относительно корня, а относительно окружения. browserrouter заменили на HashRouter
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 export default MainApp;

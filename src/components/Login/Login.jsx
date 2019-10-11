@@ -19,6 +19,13 @@ const LoginForm = ({handleSubmit, error}) => {
             <div>
                 <button>Login</button>
             </div>
+            <div><strong>For test you should use:</strong></div>
+            <div>
+                <strong>Email:</strong> free@samuraijs.com
+            </div>
+            <div>
+                <strong>Password:</strong> free
+            </div>
         </form>
     )
 };
