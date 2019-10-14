@@ -4,16 +4,23 @@ import Preloader from "../../common/Preloader/preloader";
 import userPhoto from "../../../assets/images/user.svg";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
-const ProfileInfo = ({profile, status,updateStatus}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
     if (!profile) {
-        return <Preloader />
+        return <Preloader/>
     }
-
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0]);
+        }
+    }
     return (
         <div className={s.descr}>
             <div className={s.img}></div>
             <div className={s.descriptionBlock}>
-                <img className={s.profilePhoto} alt ="" src={profile.photos.large != null ? profile.photos.large : userPhoto}/>
+                <img className={s.profilePhoto} alt="" src={profile.photos.large || userPhoto}/>
+                {
+                    isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>
+                }
                 <div className={s.status}>
                     <span>Status: </span>
                     <ProfileStatusWithHooks
@@ -29,9 +36,9 @@ const ProfileInfo = ({profile, status,updateStatus}) => {
                     <div>
                         <strong>Facebook:</strong> {profile.contacts.facebook}
                     </div>
-                        {profile.contacts.website
-                            ? <div><strong>Website:</strong> {profile.contacts.website}</div>
-                            : null}
+                    {profile.contacts.website
+                        ? <div><strong>Website:</strong> {profile.contacts.website}</div>
+                        : null}
                     <div>
                         <strong>VK:</strong> {profile.contacts.vk}
                     </div>
