@@ -13,8 +13,8 @@
 
 .descr .profilePhoto {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     background-size: 100%;
     background-position: center;
     border-radius: 50px;
@@ -29,4 +29,7 @@
 .status {
     margin-bottom: 20px;
     font-weight: bold;
+}
+.contact {
+    padding-left: 20px;
 }
