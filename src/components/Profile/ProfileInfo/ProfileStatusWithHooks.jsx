@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
 const ProfileStatusWithHooks = (props) => {
+
+    //хуки
     let [editMode, setEditMode] = useState(false);
     let [status, setStatus] = useState(props.status);
-
     useEffect(() => {
         setStatus(props.status);
     }, [props.status]);
@@ -21,7 +22,7 @@ const ProfileStatusWithHooks = (props) => {
         <div>
             {!editMode &&
             <div>
-                <b>Status: </b><span onDoubleClick={activateEditMode}>
+                <span onDoubleClick={activateEditMode}>
                         {props.status || "No status"}
                     </span>
             </div>

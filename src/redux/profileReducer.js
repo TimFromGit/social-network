@@ -6,6 +6,7 @@ const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
 const SAVE_PHOTOS_SUCCESS = 'SAVE_PHOTOS_SUCCESS';
 
+
 let initialState = {
     posts: [
         {id: 1, message: "It's my life", likesCount: 12, img: "https://picsum.photos/200"},
@@ -99,6 +100,13 @@ export const savePhoto = (file) => async (dispatch) => {
     let response = await profileAPI.savePhoto(file);
     if (response.data.resultCode === 0) {
         dispatch(savePhotoSuccess(response.data.data.photos));
+    }
+};
+export const saveProfile = (profile) => async (dispatch) => {
+    let response = await profileAPI.saveProfile(profile);
+    debugger;
+    if (response.data.resultCode === 0) {
+//        dispatch(saveProfileSuccess(response.data.data.profile));
     }
 };
 

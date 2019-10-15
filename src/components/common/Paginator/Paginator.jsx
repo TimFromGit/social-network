@@ -15,7 +15,7 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
     let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
     let rightPortionPageNumber = portionNumber * portionSize;
 
-    return <div className={s.paginator}>
+    return <div>
        {portionNumber > 1 &&
         <button onClick={() => {
             setPortionNumber(portionNumber - 1)

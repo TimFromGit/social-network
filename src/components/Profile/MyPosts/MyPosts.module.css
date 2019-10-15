@@ -1,5 +1,6 @@
 .postsBlock{
     padding: 10px;
+    overflow: hidden;
 }
 .postsBlock h2 {
     font-family: Vollkorn, serif;
