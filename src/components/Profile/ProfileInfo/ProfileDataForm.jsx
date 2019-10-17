@@ -4,7 +4,7 @@ import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import {createField, Input, Textarea} from "../../common/FormsControls/FormsControls";
 import {reduxForm} from "redux-form";
 
-const ProfileDataForm = ({profile, status, updateStatus, handleSubmit}) => {
+const ProfileDataForm = ({profile, status, updateStatus, handleSubmit, error}) => {
     return <form className={s.profileDataForm} onSubmit={handleSubmit}>
         <div className={s.fullName}>
             <b>Full name:</b>
@@ -29,15 +29,20 @@ const ProfileDataForm = ({profile, status, updateStatus, handleSubmit}) => {
             <b>About me:</b>
             {createField("About me", "aboutMe", [], Textarea)}
         </div>
-        {/*        <div>
+        <div>
             <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
-            return <Contact key={key} contactTitle={key} contactvalue={profile.contacts[key]}/>
+            return <div key={key} className={s.contact}>
+                <b>{key}</b> {createField(key, "contacts." + key, [], Input)}
+            </div>
         })}
-        </div>*/}
+        </div>
         <div>
             <button onClick={() => {
             }}>save
             </button>
+            {error && <div className={s.formSummaryError}>
+                {error}
+            </div>}
         </div>
     </form>
 };

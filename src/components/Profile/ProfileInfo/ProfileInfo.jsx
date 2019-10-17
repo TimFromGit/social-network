@@ -17,7 +17,11 @@ const ProfileInfo = ({profile, isOwner, savePhoto, status, updateStatus, savePro
         }
     };
     const onSubmit = (formData) => {
-        saveProfile(formData);
+        saveProfile(formData)
+            .then(
+                () => {
+                    setEditMode(false);
+                })
     };
     return (
         <div>
@@ -34,6 +38,7 @@ const ProfileInfo = ({profile, isOwner, savePhoto, status, updateStatus, savePro
                 </div>
                 {editMode
                     ? <ProfileDataForm
+                        initialValues={profile}
                         classname={s.profileData}
                         profile={profile}
                         status={status}
@@ -46,7 +51,9 @@ const ProfileInfo = ({profile, isOwner, savePhoto, status, updateStatus, savePro
                         status={status}
                         updateStatus={updateStatus}
                         isOwner={isOwner}
-                        goToEditMode={()=>{setEditMode(true)}}
+                        goToEditMode={() => {
+                            setEditMode(true)
+                        }}
                     />
                 }
             </div>
@@ -79,7 +86,7 @@ const ProfileData = ({profile, status, updateStatus, isOwner, goToEditMode}) => 
         </div>
         <div>
             <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
-            return <Contact key={key} contactTitle={key} contactvalue={profile.contacts[key]}/>
+            return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
         })}
         </div>
         <div>
@@ -88,7 +95,7 @@ const ProfileData = ({profile, status, updateStatus, isOwner, goToEditMode}) => 
     </div>
 }
 
-
+//для формирования контактов
 const Contact = ({contactTitle, contactValue}) => {
     return <div className={s.contact}>
         <b>{contactTitle}</b>: {contactValue}
