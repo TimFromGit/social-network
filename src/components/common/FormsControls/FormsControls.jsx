@@ -32,7 +32,7 @@ export const Input = (props) => {
     )
 };
 
-//создание филдов в логине
+//создание филдов
 export const createField = (placeholder, name, validators, component, props = {}, text = "") => (
     <div>
         <Field

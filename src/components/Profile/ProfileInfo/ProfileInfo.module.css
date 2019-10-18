@@ -1,32 +1,39 @@
-.descr .img {
-    width: 100%;
-    height: 150px;
-    background-image: url("https://cryptonomi.st/wp-content/uploads/2018/06/%D0%AD%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D1%82_%D1%81_%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D1%8B_%D0%BF%D0%BE%D0%BB%D0%B5%D1%82%D0%B0.jpg?w=640");
-    background-size: 100%;
-    background-position: 50% 30%;
-    border-radius: 10px;
-}
-
 .descriptionBlock {
     padding: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
 }
 
-.descr .profilePhoto {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    background-size: 100%;
-    background-position: center;
+.profilePhoto {
+    height: 250px;
     border-radius: 50px;
-    float: left;
-    margin-right: 30px;
+
 }
 
-.descr .profileData {
-    display: inline-block;
+.profilePhotoBlock {
+    margin-right: 50px;
+}
+
+.fullName {
+    font: bold xx-large serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid darkcyan;
 }
 
 .status {
-    margin-bottom: 20px;
-    font-weight: bold;
+    padding-bottom: 20px;
+    text-align: right;
+}
+
+.profileData {
+    overflow: hidden;
+}
+
+.contact {
+    padding-left: 20px;
+
 }
