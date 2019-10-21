@@ -7,6 +7,7 @@ import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
     refreshProfile() {
+        //match берется благодаря withRouter для коннекта с Url
         let userId = this.props.match.params.userId;
         if (!userId) {
             userId = this.props.authorizedUserId;
